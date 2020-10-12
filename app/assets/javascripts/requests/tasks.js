@@ -34,7 +34,7 @@ var postTask = function(content, successCB, errorCB) {
 var deleteTask = function(id, successCB, errorCB) {
     var request = {
         type: "DELETE",
-        url: "api/tasks/" + id + "api_key=1",
+        url: `api/tasks/${id}?api_key=1`,
         success: successCB,
         error: errorCB
     }
@@ -47,7 +47,7 @@ var updateTask = function(id, isComplete, successCB, errorCB) {
 
     var request = {
         type: "PUT",
-        url: "api/tasks/" + id + "/${uriParam}?api_key=1",
+        url: `api/tasks/${id}/${uriParam}?api_key=1`,
         success: successCB,
         error: errorCB
     }
