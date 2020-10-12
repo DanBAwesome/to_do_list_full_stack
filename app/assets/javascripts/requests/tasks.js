@@ -30,3 +30,27 @@ var postTask = function(content, successCB, errorCB) {
 
     $.ajax(request);
 }
+
+var deleteTask = function(id, successCB, errorCB) {
+    var request = {
+        type: "DELETE",
+        url: `api/tasks/${id}?api_key=1`,
+        success: successCB,
+        error: errorCB
+    }
+
+    $.ajax(request);
+}
+
+var updateTask = function(id, isComplete, successCB, errorCB) {
+    uriParam = isComplete ? "mark_complete" : "mark_active";
+
+    var request = {
+        type: "PUT",
+        url: `api/tasks/${id}/${uriParam}?api_key=1`,
+        success: successCB,
+        error: errorCB
+    }
+
+    $.ajax(request);
+}

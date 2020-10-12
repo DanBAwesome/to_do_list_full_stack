@@ -1,3 +1,148 @@
 // Place all the styles related to the Tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap";
+
+
+body {
+    background-color: #efefef;
+    font-family: 'Indie Flower', cursive;
+    background-color: #00447d;
+}
+
+#loading {
+    font-size: 1.3em;
+}
+
+.alert {
+    margin-bottom: 5px;
+}
+
+.card {
+    margin-top: 10px;
+    box-shadow: 2px 2px 3px #000;
+    border: 1px solid #000;
+    background-color: #253846;
+    color: #efefef;
+}
+
+.card-header {
+    background-color: #255e92;
+}
+
+#alertContainer {
+    position: absolute;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.task {
+    position: relative;
+    display: flex;
+    text-shadow: 1px 1px #000;
+    font-size: 1.4em;
+}
+
+.task:hover {
+    cursor: pointer;
+}
+
+.task > .task-fg {
+    padding: 5px 30px 5px 30px;
+    background-color: #26668c;
+    border-radius: 30px;
+    color: #efefef;
+    transition: 0.4s;
+    width: 100%;
+    user-select: none;
+    z-index: 1;
+    border: 1px solid #bdbdbd;
+}
+
+.task .remove {
+    color: #af2323;
+    position: absolute;
+    right: 17px;
+    top: 12px;
+}
+
+.task:hover > .task-fg {
+    margin-left: -4%;
+}
+
+.task:not(:first-of-type) {
+    margin-top: 5px;
+}
+
+.task i{
+    vertical-align: middle;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.task .completed {
+    margin-right: 10px;
+}
+
+.task > .task-bg {
+    position: absolute;
+    background-color: white;
+    border-radius: 30px;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    box-shadow: 2px 2px 4px -2px #000;
+}
+
+#filter > label {
+    box-shadow: none;
+}
+
+.task.disabled {
+    pointer-events: none;
+}
+
+.task.disabled > .task-fg {
+    background-color: #003556;
+}
+
+@media (max-width: 768px) {
+    .task{
+        width: 100%;
+        margin-left: 0;
+        border-radius: 0;
+    }
+
+    .task > .task-fg {
+        padding-left: 15px;
+        padding-right: 35px;
+        display: inline-flex;
+        z-index: 0;
+    }
+
+    .task > .task-fg > div {
+        white-space: nowrap;
+        max-width: 100%;
+        display: block;
+        overflow-x: auto;
+        margin: 0 10px 0 10px;
+    }
+
+    .task > .task-bg {
+        width: 15%;
+        position: absolute;
+        right: 0;
+        border-radius: 0 30px 30px 0;
+        background-color: #e0e0e0;
+    }
+
+    .task .remove {
+        right: 34%;
+    }
+    
+    .task:hover > .task-fg {
+        margin-left: 0;
+    }
+}

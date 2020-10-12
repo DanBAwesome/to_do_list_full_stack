@@ -1,8 +1,37 @@
-<div class="container">
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="text-center mt-4">To Do List</h1>
-            <div class="row" id="tasks"></div>
+<div id="alertContainer"></div>
+    <div class="container">
+        <div class="col-12">
+            <div class="card">
+                <h2 class="card-header text-center">Todo List</h2>
+                <div class="card-body" id="tasks">
+                </div>
+                <div class="card-footer text-center">
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons" id="filter">
+                        <label class="btn btn-light active" >
+                            <input type="radio" id="all" data-filter="2" checked /> All
+                        </label>
+                        <label class="btn btn-light" >
+                            <input type="radio" id="active" data-filter="0" /> Active
+                        </label>
+                        <label class="btn btn-light" >
+                            <input type="radio" id="complete" data-filter="1" /> Complete
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="card">
+                <h2 class="card-header text-center">Add Todo Items</h2>
+                <div class="card-body">
+                    <form id="todoForm">
+                        <div class="form-group">
+                            <label>Task Name</label>
+                            <input class="form-control" type="text" placeholder="Task Name" name="taskName" required />
+                        </div>
+                        <button class="btn btn-primary" type="submit" style="float: right;">Add Task</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
-</div>
